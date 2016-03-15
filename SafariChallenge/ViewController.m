@@ -49,6 +49,7 @@
 }
 
 - (IBAction)onBackButtonPressed:(UIButton *)sender {
-    [self.webView goBack];
+    self.onBackButtonPressed.enabled = self.webView.canGoBack;
+
 }
 @end
