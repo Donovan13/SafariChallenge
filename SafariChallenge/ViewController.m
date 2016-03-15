@@ -15,8 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
-
+@property (weak, nonatomic) IBOutlet UIWebView *onBackButtonPressed;
 
 @end
 
@@ -24,8 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self loadRequestWithString: @"http://google.com"];
+    [self loadRequestWithString: @"http://www.mobilemakers.co"];
 }
 
 - (void) loadRequestWithString: (NSString *)string {
@@ -34,7 +32,6 @@
     [self.webView loadRequest:request];
     
 }
-
 
 - (void) webViewDidStartLoad:(UIWebView *)webView {
     [self.spinner startAnimating];
