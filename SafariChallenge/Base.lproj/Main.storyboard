@@ -49,10 +49,10 @@
                                 <exclude reference="3KA-at-2cQ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="BFh-Gc-ryv"/>
                                 <exclude reference="VwA-dA-3pt"/>
                                 <exclude reference="c2g-9c-vbN"/>
                                 <exclude reference="cLd-Yf-yXi"/>
-                                <exclude reference="BFh-Gc-ryv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -61,10 +61,10 @@
                                 <include reference="3KA-at-2cQ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="BFh-Gc-ryv"/>
                                 <include reference="VwA-dA-3pt"/>
                                 <include reference="c2g-9c-vbN"/>
                                 <include reference="cLd-Yf-yXi"/>
-                                <include reference="BFh-Gc-ryv"/>
                             </mask>
                         </variation>
                     </view>

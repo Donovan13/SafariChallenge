@@ -27,11 +27,15 @@
 
 }
 
-- (void) textFieldShouldReturn: UITextFieldDelegate {
-    
-    
-    
+- (BOOL) textFieldShouldReturn:(UITextField *)urlTextField {
+    NSURL *url = [NSURL URLWithString:urlTextField.text];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.urlTextField];
 }
+
+}
+    
+
 
 
 @end
