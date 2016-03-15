@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 
 
@@ -23,18 +24,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)urlTextField {
+
+- (void) webViewDidStartLoad:(UIWebView *)webView {
+    [self.spinner startAnimating];
+}
+
+- (void) webViewDidFinishLoad:(UIWebView *)webView {
+    [self.spinner stopAnimating];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)urlTextField {
     NSURL *url = [NSURL URLWithString:urlTextField.text];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.urlTextField];
+    [self.webView loadRequest:request];
+    return YES;
 }
-
-}
-    
 
 
 

@@ -35,6 +35,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ps4-7J-Hu3"/>
                                 </connections>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XVT-eo-BKY">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="182" y="291" width="37" height="37"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-rG-bSO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="538" width="360" height="42"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,6 +61,8 @@
                             <mask key="subviews">
                                 <exclude reference="6N2-hi-bHq"/>
                                 <exclude reference="3KA-at-2cQ"/>
+                                <exclude reference="XVT-eo-BKY"/>
+                                <exclude reference="Rdm-rG-bSO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BFh-Gc-ryv"/>
@@ -59,6 +75,8 @@
                             <mask key="subviews">
                                 <include reference="6N2-hi-bHq"/>
                                 <include reference="3KA-at-2cQ"/>
+                                <include reference="XVT-eo-BKY"/>
+                                <include reference="Rdm-rG-bSO"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="BFh-Gc-ryv"/>
@@ -69,6 +87,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="XVT-eo-BKY" id="Wwz-vw-HeL"/>
                         <outlet property="urlTextField" destination="3KA-at-2cQ" id="kY5-X9-zrA"/>
                         <outlet property="urlTextFielf" destination="3KA-at-2cQ" id="wCe-uq-Hke"/>
                         <outlet property="webView" destination="6N2-hi-bHq" id="bFT-FT-sDf"/>
