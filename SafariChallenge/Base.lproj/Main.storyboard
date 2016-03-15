@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6N2-hi-bHq">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FwS-DG-sy7"/>
-                                </connections>
-                            </webView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3KA-at-2cQ">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -44,11 +37,38 @@
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rdm-rG-bSO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN4-Mh-Zvg">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="&lt;"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="107" y="6" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onBackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y96-Ha-PXu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="wN4-Mh-Zvg"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="538" width="360" height="42"/>
+                                    <mask key="subviews">
+                                        <include reference="wN4-Mh-Zvg"/>
+                                    </mask>
                                 </variation>
                             </view>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6N2-hi-bHq">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FwS-DG-sy7"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,10 +79,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="6N2-hi-bHq"/>
                                 <exclude reference="3KA-at-2cQ"/>
                                 <exclude reference="XVT-eo-BKY"/>
                                 <exclude reference="Rdm-rG-bSO"/>
+                                <exclude reference="6N2-hi-bHq"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BFh-Gc-ryv"/>
@@ -73,10 +93,10 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="6N2-hi-bHq"/>
                                 <include reference="3KA-at-2cQ"/>
                                 <include reference="XVT-eo-BKY"/>
                                 <include reference="Rdm-rG-bSO"/>
+                                <include reference="6N2-hi-bHq"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="BFh-Gc-ryv"/>
@@ -87,6 +107,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="onBackButtonPressed" destination="wN4-Mh-Zvg" id="yCO-Pn-H1H"/>
                         <outlet property="spinner" destination="XVT-eo-BKY" id="Wwz-vw-HeL"/>
                         <outlet property="urlTextField" destination="3KA-at-2cQ" id="kY5-X9-zrA"/>
                         <outlet property="urlTextFielf" destination="3KA-at-2cQ" id="wCe-uq-Hke"/>
