@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-- (IBAction)onBackButtonPressed:(UIButton *)sender;
+
 
 
 @end
@@ -24,6 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self loadRequestWithString: @"http://google.com"];
+}
+
+- (void) loadRequestWithString: (NSString *)string {
+    NSURL *url = [NSURL URLWithString: string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+    
 }
 
 
@@ -43,6 +52,6 @@
 }
 
 - (IBAction)onBackButtonPressed:(UIButton *)sender {
-    
+    [self.webView goBack];
 }
 @end

@@ -107,10 +107,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="onBackButtonPressed" destination="wN4-Mh-Zvg" id="yCO-Pn-H1H"/>
                         <outlet property="spinner" destination="XVT-eo-BKY" id="Wwz-vw-HeL"/>
                         <outlet property="urlTextField" destination="3KA-at-2cQ" id="kY5-X9-zrA"/>
-                        <outlet property="urlTextFielf" destination="3KA-at-2cQ" id="wCe-uq-Hke"/>
                         <outlet property="webView" destination="6N2-hi-bHq" id="bFT-FT-sDf"/>
                     </connections>
                 </viewController>
