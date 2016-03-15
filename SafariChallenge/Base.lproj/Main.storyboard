@@ -42,10 +42,40 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title="&lt;"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="107" y="6" width="30" height="30"/>
+                                            <rect key="frame" x="23" y="6" width="30" height="30"/>
                                         </variation>
                                         <connections>
                                             <action selector="onBackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y96-Ha-PXu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVR-rL-gLJ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="&gt;"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="307" y="6" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onForwardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wtd-3E-v6N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQh-Kz-qgl">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Stop"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="106" y="6" width="32" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onStopLoadingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D92-EK-btj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmr-AR-nco">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Reload"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="194" y="6" width="47" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onReloadButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdv-R0-lZR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -53,12 +83,18 @@
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="wN4-Mh-Zvg"/>
+                                        <exclude reference="FVR-rL-gLJ"/>
+                                        <exclude reference="eQh-Kz-qgl"/>
+                                        <exclude reference="Bmr-AR-nco"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="538" width="360" height="42"/>
                                     <mask key="subviews">
                                         <include reference="wN4-Mh-Zvg"/>
+                                        <include reference="FVR-rL-gLJ"/>
+                                        <include reference="eQh-Kz-qgl"/>
+                                        <include reference="Bmr-AR-nco"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -107,6 +143,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="wN4-Mh-Zvg" id="zCI-eN-Zb4"/>
                         <outlet property="spinner" destination="XVT-eo-BKY" id="Wwz-vw-HeL"/>
                         <outlet property="urlTextField" destination="3KA-at-2cQ" id="kY5-X9-zrA"/>
                         <outlet property="webView" destination="6N2-hi-bHq" id="bFT-FT-sDf"/>

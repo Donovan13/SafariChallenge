@@ -11,11 +11,14 @@
 
 
 @interface ViewController () <UIWebViewDelegate, UITextFieldDelegate>
-
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIWebView *onBackButtonPressed;
+- (IBAction)onForwardButtonPressed:(UIButton *)sender;
+- (IBAction)onStopLoadingButtonPressed:(UIButton *)sender;
+- (IBAction)onReloadButtonPressed:(UIButton *)sender;
 
 @end
 
@@ -24,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadRequestWithString: @"http://www.mobilemakers.co"];
+    
 }
 
 - (void) loadRequestWithString: (NSString *)string {
@@ -49,7 +53,19 @@
 }
 
 - (IBAction)onBackButtonPressed:(UIButton *)sender {
-    self.onBackButtonPressed.enabled = self.webView.canGoBack;
-
+    [self.webView goBack];
 }
+- (IBAction)onForwardButtonPressed:(UIButton *)sender {
+    [self.webView goForward];
+}
+
+- (IBAction)onStopLoadingButtonPressed:(UIButton *)sender {
+    [self.webView stopLoading];
+}
+
+- (IBAction)onReloadButtonPressed:(UIButton *)sender {
+    [self.webView reload];
+}
+
 @end
+
