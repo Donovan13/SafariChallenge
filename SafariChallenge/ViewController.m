@@ -11,12 +11,13 @@
 
 
 @interface ViewController () <UIWebViewDelegate, UITextFieldDelegate>
-
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *urlTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
 @property (weak, nonatomic) IBOutlet UIButton *forwardButton;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *comingSoon;
 
 
@@ -88,6 +89,7 @@
 
 - (IBAction)onStopLoadingButtonPressed:(UIButton *)sender {
     [self.webView stopLoading];
+    [self.spinner stopAnimating];
 }
 
 - (IBAction)onReloadButtonPressed:(UIButton *)sender {
@@ -108,7 +110,6 @@
     [self presentViewController: alert animated:YES completion:nil];
 
 }
-
 
 
 @end
